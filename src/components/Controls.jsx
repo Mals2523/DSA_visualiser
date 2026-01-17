@@ -1,5 +1,5 @@
 import { bubbleSortSteps } from "../Algorithms/bubbleSort";
-import { selectionSortSteps } from "../Algorithms/selectionSort";
+import { selectionSortSteps } from "../Algorithms/insertionSort";
 import { mergeSortSteps } from "../Algorithms/mergeSort";
 import { quickSortSteps } from "../Algorithms/quickSort";
 
@@ -23,15 +23,19 @@ function Controls({ array, setArray, setSelectedAlgo }) {
     }
   };
 
-  const selectionSort = async () => {
-    setSelectedAlgo("selection");
-    const steps = selectionSortSteps(array);
+const insertionSort = async () => {
+  if (!array.length) return;
 
-    for (const step of steps) {
-      setArray(step.array);
-      await new Promise(res => setTimeout(res, 120));
-    }
-  };
+  setSelectedAlgo("insertion");
+
+  const steps = insertionSortSteps(array);
+
+  for (const step of steps) {
+    setArray(step.array);
+    await new Promise(res => setTimeout(res, 120));
+  }
+};
+
 
   const mergeSort = async () => {
     setSelectedAlgo("merge");
@@ -61,7 +65,7 @@ function Controls({ array, setArray, setSelectedAlgo }) {
     <div style={{ display: "flex", gap: "12px", marginTop: "15px" }}>
       <button onClick={generateArray}>Generate Array</button>
       <button onClick={bubbleSort}>Bubble Sort</button>
-      <button onClick={selectionSort}>Selection Sort</button>
+      <button onClick={insertionSort}>Insertion Sort</button>
       <button onClick={mergeSort}>Merge Sort</button>
       <button onClick={quickSort}>Quick Sort</button>
 

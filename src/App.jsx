@@ -2,11 +2,12 @@ import { useState } from "react";
 import ArrayBars from "./components/ArrayBars";
 import Controls from "./components/Controls";
 
-import PseudoCode from "./components/PseudoCode";
-import Explanation from "./components/Explanation";
+import PseudoCode from "./components/InsertionPseudo";
+import Explanation from "./components/InsertionExplain";
 
-import SelectionPseudo from "./components/SelectionPseudo";
-import SelectionExplain from "./components/SelectionExplain";
+import InsertionPseudo from "./components/InsertionPseudo";
+import InsertionExplain from "./components/InsertionExplain";
+
 
 import MergePseudo from "./components/MergePseudo";
 import MergeExplain from "./components/MergeExplain";
@@ -47,7 +48,7 @@ export default function App() {
         {/* Box 2: Pseudocode */}
         <div style={{ flex: 2, background: "#1e293b", padding: "20px" }}>
           {selectedAlgo === "bubble" && <PseudoCode />}
-          {selectedAlgo === "selection" && <SelectionPseudo />}
+          {selectedAlgo === "insertion" && <InsertionPseudo />}
           {selectedAlgo === "merge" && <MergePseudo />}
           {selectedAlgo === "quick" && <QuickPseudo />}
 
@@ -56,7 +57,7 @@ export default function App() {
         {/* Box 3: Explanation */}
         <div style={{ flex: 2, background: "#1e293b", padding: "20px" }}>
           {selectedAlgo === "bubble" && <Explanation />}
-          {selectedAlgo === "selection" && <SelectionExplain />}
+          {selectedAlgo === "insertion" && <InsertionExplain />}
           {selectedAlgo === "merge" && <MergeExplain />}
           {selectedAlgo === "quick" && <QuickExplain />}
         </div>

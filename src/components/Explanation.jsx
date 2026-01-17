@@ -3,7 +3,7 @@ function Explanation() {
     <div
       style={{
         width: "100%",
-        padding: "20px",
+       
         backgroundColor: "#1f2937",
         color: "#e5e7eb",
         borderRadius: "10px",

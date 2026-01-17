@@ -1,35 +1,38 @@
-import { bubbleSortSteps } from "../algorithms/bubbleSort";
+import { bubbleSortSteps } from "../Algorithms/bubbleSort";
+import { selectionSortSteps } from "../Algorithms/selectionSort";
 
-function Controls({ array, setArray }) {
+function Controls({ array, setArray, setSelectedAlgo }) {
+
   const generateArray = () => {
-    const arr = [];
-    for (let i = 0; i < 20; i++) {
-      arr.push(Math.floor(Math.random() * 100) + 10);
-    }
-    setArray(arr);
+    const newArr = Array.from({ length: 7 }, () =>
+      Math.floor(Math.random() * 300)
+    );
+    setArray(newArr);
   };
 
   const bubbleSort = async () => {
-    if (!array || array.length === 0) return;
-
+    setSelectedAlgo("bubble");
     const steps = bubbleSortSteps(array);
-
-    for (let step of steps) {
+    for (const step of steps) {
       setArray(step.array);
-      await new Promise((res) => setTimeout(res, 200));
+      await new Promise(res => setTimeout(res, 150));
+    }
+  };
+
+  const selectionSort = async () => {
+    setSelectedAlgo("selection");
+    const steps = selectionSortSteps(array);
+    for (const step of steps) {
+      setArray(step.array);
+      await new Promise(res => setTimeout(res, 150));
     }
   };
 
   return (
-    <div style={{ marginBottom: "20px" }}>
+    <div style={{ display: "flex", gap: "15px", marginTop: "20px" }}>
       <button onClick={generateArray}>Generate Array</button>
-
-      <button
-        onClick={bubbleSort}
-        style={{ marginLeft: "10px" }}
-      >
-        Bubble Sort
-      </button>
+      <button onClick={bubbleSort}>Bubble Sort</button>
+      <button onClick={selectionSort}>Selection Sort</button>
     </div>
   );
 }

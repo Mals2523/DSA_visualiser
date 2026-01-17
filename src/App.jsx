@@ -3,9 +3,14 @@ import ArrayBars from "./components/ArrayBars";
 import Controls from "./components/Controls";
 import PseudoCode from "./components/PseudoCode";
 import Explanation from "./components/Explanation";
+import SelectionPseudo from "./components/SelectionPseudo";
+import SelectionExplain from "./components/SelectionExplain";
+
 
 export default function App() {
   const [array, setArray] = useState([]);
+  const [selectedAlgo, setSelectedAlgo] = useState("bubble");
+
 
   return (
     <div style={{ padding: "20px", color: "white" }}>
@@ -13,8 +18,14 @@ export default function App() {
         DSA Learning Visualizer
       </h1>
 
-      {/* Buttons */}
-      <Controls array={array} setArray={setArray} />
+      <Controls
+  array={array}
+  setArray={setArray}
+  setSelectedAlgo={setSelectedAlgo}
+/>
+
+
+      
 
       {/* Main Layout */}
       <div
@@ -26,42 +37,23 @@ export default function App() {
           width: "100%",
         }}
       >
-        {/* Box 1: Visualizer */}
-        <div
-          style={{
-            flex: 3,
-            backgroundColor: "#0f172a",
-            padding: "20px",
-            borderRadius: "10px",
-          }}
-        >
+        {/* Visualizer */}
+        <div style={{ flex: 2, backgroundColor: "#0f172a", padding: "20px" }}>
           <ArrayBars array={array} />
         </div>
 
-        {/* Box 2: Pseudocode */}
-        <div
-          style={{
-            flex: 3,
-            backgroundColor: "#1e293b",
-            padding: "20px",
-            borderRadius: "10px",
-          }}
-        >
-          <PseudoCode />
+        {/* Pseudocode */}
+        <div style={{ flex: 2, backgroundColor: "#1e293b", padding: "20px" }}>
+          {selectedAlgo === "bubble" ? <PseudoCode /> : <SelectionPseudo />}
         </div>
 
-        {/* Box 3: Explanation */}
-        <div
-          style={{
-            flex: 3,
-            backgroundColor: "#1e293b",
-            padding: "20px",
-            borderRadius: "10px",
-          }}
-        >
-          <Explanation />
+        {/* Explanation */}
+        <div style={{ flex: 2, backgroundColor: "#1e293b", padding: "20px" }}>
+          {selectedAlgo === "bubble" ? <Explanation /> : <SelectionExplain />}
         </div>
       </div>
-    </div>
+    
+        
+        </div>
   );
 }

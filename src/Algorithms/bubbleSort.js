@@ -3,25 +3,35 @@ export function bubbleSortSteps(arr) {
   const array = [...arr];
 
   for (let i = 0; i < array.length; i++) {
+    let swapped = false;
+
     for (let j = 0; j < array.length - i - 1; j++) {
-      // Compare step
+      
+      // Compare animation
       steps.push({
-        type: "compare",
-        indices: [j, j + 1],
         array: [...array],
+        highlights: { compare: [j, j + 1] }
       });
 
       if (array[j] > array[j + 1]) {
-        // Swap
+        // Swap animation
         [array[j], array[j + 1]] = [array[j + 1], array[j]];
+        swapped = true;
 
         steps.push({
-          type: "swap",
-          indices: [j, j + 1],
           array: [...array],
+          highlights: { swap: [j, j + 1] }
         });
       }
     }
+
+    // Mark sorted element
+    steps.push({
+      array: [...array],
+      highlights: { sorted: array.length - 1 - i }
+    });
+
+    if (!swapped) break;
   }
 
   return steps;

@@ -3,24 +3,23 @@ export default function ArrayBars({ array }) {
     <div
       style={{
         display: "flex",
-        alignItems: "flex-end", // bars stick to bottom
+        alignItems: "flex-end",
         justifyContent: "center",
         gap: "8px",
-        height: "300px",        // FIXED HEIGHT
-        padding: "15px",
-        overflow: "hidden",     // prevents bars from escaping
+        height: "300px",
+        padding: "20px",
+        backgroundColor: "#0f172a",
         borderRadius: "12px",
-        
-        
+        overflow: "hidden",
       }}
     >
-      {array.map((value, index) => (
+      {array.map((value, i) => (
         <div
-          key={index}
+          key={i}
           style={{
             width: "16px",
+            height: `${value}px`,
             backgroundColor: "#6366f1",
-            height: `${value}px`,  // bar height
             borderRadius: "4px",
             transition: "all 0.2s ease",
           }}

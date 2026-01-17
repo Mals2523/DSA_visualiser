@@ -6,6 +6,7 @@ export default function SelectionExplain() {
       </h3>
 
       <ul style={{ paddingLeft: "20px", lineHeight: "1.6", margin: 0 }}>
+        <li>Time Complexity : O(n²)</li>
         <li>Start from the first index.</li>
         <li>Find the smallest element in the unsorted portion.</li>
         <li>Mark it as the new minimum.</li>

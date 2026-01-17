@@ -26,6 +26,7 @@ function Explanation() {
           margin: 0,
         }}
       >
+        <li>Time Complexity : O(n²)</li>
         <li>Compare adjacent elements one by one.</li>
         <li>If the left element is larger, swap them.</li>
         <li>The largest element moves to the end after each pass.</li>

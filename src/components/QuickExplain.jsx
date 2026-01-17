@@ -4,6 +4,7 @@ export default function QuickExplain() {
       <h3 style={{ color: "#a5b4fc" }}>How Quick Sort Works</h3>
 
       <ul style={{ lineHeight: "1.6" }}>
+        <li>Time Complexity : O(n log n) average, O(n²) worst</li>
         <li>Pick a pivot (usually the last element).</li>
         <li>Rearrange elements so that smaller values go left.</li>
         <li>Larger values go right.</li>

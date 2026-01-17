@@ -11,6 +11,10 @@ import SelectionExplain from "./components/SelectionExplain";
 import MergePseudo from "./components/MergePseudo";
 import MergeExplain from "./components/MergeExplain";
 
+import QuickPseudo from "./components/QuickPseudo";
+import QuickExplain from "./components/QuickExplain";
+
+
 export default function App() {
   const [array, setArray] = useState([]);
   const [selectedAlgo, setSelectedAlgo] = useState("bubble");
@@ -45,6 +49,8 @@ export default function App() {
           {selectedAlgo === "bubble" && <PseudoCode />}
           {selectedAlgo === "selection" && <SelectionPseudo />}
           {selectedAlgo === "merge" && <MergePseudo />}
+          {selectedAlgo === "quick" && <QuickPseudo />}
+
         </div>
 
         {/* Box 3: Explanation */}
@@ -52,6 +58,7 @@ export default function App() {
           {selectedAlgo === "bubble" && <Explanation />}
           {selectedAlgo === "selection" && <SelectionExplain />}
           {selectedAlgo === "merge" && <MergeExplain />}
+          {selectedAlgo === "quick" && <QuickExplain />}
         </div>
       </div>
     </div>

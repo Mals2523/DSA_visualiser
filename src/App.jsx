@@ -22,7 +22,7 @@ export default function App() {
   return (
     <div style={{ padding: "20px", color: "white" }}>
       <h1 style={{ fontSize: "2.5rem", fontWeight: "bold" }}>
-        DSA Learning Visualizer
+        Sorting Visualiser
       </h1>
 
       <Controls

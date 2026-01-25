@@ -1,12 +1,12 @@
 import { bubbleSortSteps } from "../Algorithms/bubbleSort";
-import { selectionSortSteps } from "../Algorithms/insertionSort";
+import { insertionSortSteps } from "../Algorithms/insertionSort";
 import { mergeSortSteps } from "../Algorithms/mergeSort";
 import { quickSortSteps } from "../Algorithms/quickSort";
 
 
 function Controls({ array, setArray, setSelectedAlgo }) {
 
-  const generateArray = () => {
+  const generateArray = () => { 
     const newArr = Array.from({ length: 7 }, () =>
       Math.floor(Math.random() * 250) + 20
     );

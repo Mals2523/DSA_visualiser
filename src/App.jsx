@@ -2,19 +2,21 @@ import { useState } from "react";
 import ArrayBars from "./components/ArrayBars";
 import Controls from "./components/Controls";
 
-import PseudoCode from "./components/InsertionPseudo";
-import Explanation from "./components/InsertionExplain";
+// Bubble Sort components
+import PseudoCode from "./components/PseudoCode";
+import Explanation from "./components/Explanation";
 
+// Insertion Sort
 import InsertionPseudo from "./components/InsertionPseudo";
 import InsertionExplain from "./components/InsertionExplain";
 
-
+// Merge Sort
 import MergePseudo from "./components/MergePseudo";
 import MergeExplain from "./components/MergeExplain";
 
+// Quick Sort
 import QuickPseudo from "./components/QuickPseudo";
 import QuickExplain from "./components/QuickExplain";
-
 
 export default function App() {
   const [array, setArray] = useState([]);
@@ -51,7 +53,6 @@ export default function App() {
           {selectedAlgo === "insertion" && <InsertionPseudo />}
           {selectedAlgo === "merge" && <MergePseudo />}
           {selectedAlgo === "quick" && <QuickPseudo />}
-
         </div>
 
         {/* Box 3: Explanation */}
